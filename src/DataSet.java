@@ -12,7 +12,7 @@ public class DataSet
 	private int largestYet, smallestYet;
 	
 	/**
-	 * Constructs a new DataSet
+	 * Constructs a new DataSet.
 	 */
 	public DataSet()
 	{
