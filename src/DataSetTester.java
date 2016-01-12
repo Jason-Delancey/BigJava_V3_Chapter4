@@ -28,6 +28,12 @@ public class DataSetTester
 		
 		System.out.println(test.getAverage());
 		System.out.println("Expected result: 16.5");
+		
+		System.out.println(test.getLargest());
+		System.out.println("Expected result: 32");
+		
+		System.out.println(test.getSmallest());
+		System.out.println("Expected result: 5");
 	}
 
 }
