@@ -16,6 +16,23 @@ public class CashRegisterTester
 		register.enterQuarters(2);
 		System.out.println("Change: " + register.giveChange());
 		System.out.println("Expected: 0.13");
+		System.out.println();
+		
+		CashRegister register2 = new CashRegister();
+		register2.recordPurchase(8.37);
+		register2.enterPayment(10, 0, 0, 0, 0);
+		System.out.println("Change: " + register2.giveChange());
+		System.out.println("Expected: 1.63");
+		System.out.println("Dollars: " + register2.giveDollars());
+		System.out.println("Expected: 1");
+		System.out.println("Quarters: " + register2.giveQuarters());
+		System.out.println("Expected: 2");
+		System.out.println("Dimes: " + register2.giveDimes());
+		System.out.println("Expected: 1");
+		System.out.println("Nickels: " + register2.giveNickels());
+		System.out.println("Expected: 0");
+		System.out.println("Pennies: " + register2.givePennies());
+		System.out.println("Expected: 3");
 	} 
 	
 }

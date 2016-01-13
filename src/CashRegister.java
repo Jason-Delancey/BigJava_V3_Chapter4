@@ -9,7 +9,7 @@
 public class CashRegister
 {
 	private double purchase;
-	private double payment;
+	private double payment, change;
 	private int itemCounter;
 	public static final double QUARTER_VALUE = 0.25;
 	public static final double DIME_VALUE = 0.1;
@@ -44,7 +44,7 @@ public class CashRegister
 	 */
 	public double giveChange()
 	{
-		double change = payment - purchase;
+		change = payment - purchase;
 		purchase = 0;
 		payment = 0;
 		itemCounter = 0;
@@ -116,6 +116,86 @@ public class CashRegister
 	public void enterPennies(int pennies)
 	{
 		payment += (pennies * PENNY_VALUE);
+	}
+	
+	/**
+	 * Returns the number of dollars in change.
+	 * @return the number of dollars in change
+	 */
+	public int giveDollars()
+	{
+		double dollars = 0;
+		for(int i = 0; (i * 1.0) <= change; i++)
+		{
+			dollars = i * 1.0;
+		}
+		change -= dollars;
+		
+		return (int)dollars;
+	}
+	
+	/**
+	 * Returns the number of quarters in change.
+	 * @return the number of quarters in change
+	 */
+	public int giveQuarters()
+	{
+		int numOfQuarters = 0;
+		for(int i = 0; (i * QUARTER_VALUE) <= change; i++)
+		{
+			numOfQuarters = i;
+		}
+		change -= (numOfQuarters * QUARTER_VALUE);
+		
+		return numOfQuarters;
+	}
+	
+	/**
+	 * Returns the number of dimes in change.
+	 * @return the number of dimes in change
+	 */
+	public int giveDimes()
+	{
+		int numOfDimes = 0;
+		for(int i = 0; (i * DIME_VALUE) <= change; i++)
+		{
+			numOfDimes = i;
+		}
+		change -= (numOfDimes * DIME_VALUE);
+		
+		return numOfDimes;
+	}
+	
+	/**
+	 * Returns the number of nickels in change.
+	 * @return the number of nickels in change
+	 */
+	public int giveNickels()
+	{
+		int numOfNickels = 0;
+		for(int i = 0; (i * NICKEL_VALUE) <= change; i++)
+		{
+			numOfNickels = i;
+		}
+		change -= (numOfNickels * NICKEL_VALUE);
+		
+		return numOfNickels;
+	}
+	
+	/**
+	 * Returns the number of pennies in change.
+	 * @return the number of pennies in change
+	 */
+	public int givePennies()
+	{
+		int numOfPennies = 0;
+		for(int i = 0; (i * PENNY_VALUE) <= change; i++)
+		{
+			numOfPennies = i;
+		}
+		change -= (numOfPennies * PENNY_VALUE);
+		
+		return numOfPennies;
 	}
 
 }
