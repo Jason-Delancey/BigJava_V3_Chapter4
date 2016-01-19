@@ -48,7 +48,7 @@ public class TriangleTester
 		}
 		
 		JFrame frame = new JFrame();
-		frame.setSize(500, 500);
+		frame.setSize(700, 700);
 		frame.setTitle("Triangle Properties");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
