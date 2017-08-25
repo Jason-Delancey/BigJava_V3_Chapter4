@@ -11,4 +11,9 @@ import javax.swing.JTable;
 public class TriangleTable extends JTable
 {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 }
